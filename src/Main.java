@@ -24,7 +24,7 @@ public class Main {
                     ingresarDatosBus();
                     break;
                 case 3:
-                    System.out.println("INGRESAR DATOS DE AUTOBUS TURISTICO");
+                    ingresarDatosTur();
                     break;
                 case 4:
                     imprimirLista((ArrayList) listaVehiculos);
@@ -46,7 +46,7 @@ public class Main {
         System.out.println("MENU DE VEHICULOS");
         System.out.println("1. Ingresar vehiculo");
         System.out.println("2. Ingresar autobus");
-        System.out.println("3. Ingresar autobis de turismo");
+        System.out.println("3. Ingresar autobus de turismo");
         System.out.println("4. Mostrar vehiculos");
         System.out.println("0. Salir");
         System.out.print("Ingrese la opcion a realizar: ");
@@ -73,7 +73,7 @@ public class Main {
         String marca, modelo;
         double precioAl=0;
         int numPlaza=0;
-        System.out.println("INGRESAR DATOS DE VEHICULO");
+        System.out.println("INGRESAR DATOS DE AUTOBUS");
         System.out.print("Ingrese la marca del autobus: ");
         marca = sc.next();
         System.out.print("Ingrese el modelo del autobus: ");
@@ -83,5 +83,20 @@ public class Main {
         System.out.print("Ingrese el numero de plazas del autobus: ");
         numPlaza = sc.nextInt();
         listaVehiculos.add(new Autobus(marca, modelo, precioAl, numPlaza));
+    }
+    private static void ingresarDatosTur() {
+        String marca, modelo;
+        double precioAl=0;
+        int numPuertas = 0;
+        System.out.println("INGRESAR DATOS DE AUTOBUS");
+        System.out.print("Ingrese la marca del autobus turistico: ");
+        marca = sc.next();
+        System.out.print("Ingrese el modelo del autobus turistico: ");
+        modelo = sc.next();
+        System.out.print("Ingrese el precio de alquiler: ");
+        precioAl = sc.nextDouble();
+        System.out.print("Ingrese el numero de puertas: ");
+        numPuertas = sc.nextInt();
+        listaVehiculos.add(new Turismo(marca, modelo, precioAl, numPuertas));
     }
 }
